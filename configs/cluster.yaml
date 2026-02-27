@@ -1,0 +1,12 @@
+app_name: "MSBX5420 Final Project"
+env: "cluster"
+
+paths:
+  raw: "s3://YOUR-BUCKET/raw"          # placeholder
+  processed: "s3://YOUR-BUCKET/processed"
+  outputs_tables: "s3://YOUR-BUCKET/outputs/tables"
+  outputs_figures: "outputs/figures"   # figures often generated locally after download
+
+spark:
+  master: null                          # cluster provides this
+  shuffle_partitions: 200

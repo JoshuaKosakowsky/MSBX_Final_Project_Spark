@@ -1,0 +1,32 @@
+services:
+  jupyter:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: spark-jupyter
+    volumes:
+      - ..:/home/jovyan/work
+    working_dir: /home/jovyan/work
+    ports:
+      - "8888:8888"
+      - "4040:4040"
+    environment:
+      - PYTHONPATH=/home/jovyan/work/src
+    command: >
+      bash -lc "start-notebook.sh
+      --NotebookApp.token=''
+      --NotebookApp.password=''
+      --NotebookApp.allow_origin='*'
+      --NotebookApp.ip='0.0.0.0'"
+
+  spark-shell:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: spark-shell
+    volumes:
+      - ..:/home/jovyan/work
+    working_dir: /home/jovyan/work
+    environment:
+      - PYTHONPATH=/home/jovyan/work/src
+    tty: true

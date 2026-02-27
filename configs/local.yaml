@@ -1,0 +1,12 @@
+app_name: "MSBX5420 Final Project"
+env: "local"
+
+paths:
+  raw: "data/raw"
+  processed: "data/processed"
+  outputs_tables: "outputs/tables"
+  outputs_figures: "outputs/figures"
+
+spark:
+  master: "local[*]"
+  shuffle_partitions: 8
