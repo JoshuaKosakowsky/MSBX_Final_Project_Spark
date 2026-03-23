@@ -1,0 +1,21 @@
+version: "3.9"
+
+name: final_project
+
+services:
+  final_project:
+    container_name: final_project
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+
+    ports:
+      - "8899:8888"
+
+    volumes:
+      - ..:/home/jovyan/work
+
+    environment:
+      - JUPYTER_TOKEN=
+
+    command: start-notebook.py --IdentityProvider.token=''
