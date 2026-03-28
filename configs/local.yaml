@@ -9,6 +9,8 @@ paths:
   processed: "data/processed"
   outputs_tables: "outputs/tables"
   outputs_figures: "outputs/figures"
+  stream_batches: "data/stream/batches"
+  stream_input: "data/stream/input"
 
 spark:
   master: "local[*]"

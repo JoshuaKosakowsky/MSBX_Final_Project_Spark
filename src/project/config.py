@@ -8,9 +8,14 @@ import yaml
 @dataclass(frozen=True)
 class Paths:
     raw: str
+    raw_local: str
+    raw_sample: str
+    raw_s3: str
     processed: str
     outputs_tables: str
     outputs_figures: str
+    stream_batches: str
+    stream_input: str
 
 
 @dataclass(frozen=True)
